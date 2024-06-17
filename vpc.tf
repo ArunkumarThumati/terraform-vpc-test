@@ -1,5 +1,6 @@
 module "vpc"{
-    source = "../terraform-aws-vpc"
+#source = "../terraform-aws-vpc"
+ source = "git::https://github.com/ArunkumarThumati/terraform-aws-vpc.git?ref=main"
     project_name = var.project_name
     common_tags = var.common_tags
     public_subnet_cidrs = var.public_subnet_cidrs
@@ -7,5 +8,5 @@ module "vpc"{
     database_subnet_cidrs = var.database_subnet_cidrs
     # accepter_vpc_id = var.accepter_vpc_id
     is_peering_required = var.is_peering_required
-    database_subnet_group_tags = var.database_subnet_group_tags
+    
 }
